@@ -227,14 +227,14 @@ def main():
             st.header("📋 Resumen General")
             
             # Formatear columnas porcentuales
-            porcentajes = ["Dividend Yield %", "ROA", "ROE", "Oper Margin", "Profit Margin", "WACC", "ROIC", "EVA"]
+            porcentajes = ["Dividend Yield %", "Payout Ratio", "ROA", "ROE", "Current Ratio", "Oper Margin", "Profit Margin", "WACC", "ROIC", "Creación de Valor (WACC vs ROIC)"]
             for col in porcentajes:
                 if col in df.columns:
                     df[col] = df[col].apply(lambda x: f"{x:.2%}" if pd.notnull(x) else "N/D")
             
             columnas_mostrar = [
                 "Ticker", "Nombre", "Sector", "Precio", "P/E", "P/B", "P/FCF", 
-                "Dividend Yield %", "ROE", "Debt/Eq", "Profit Margin", "WACC", "ROIC"
+                "Dividend Yield %", "Payout Ratio", "ROE", "ROA", "Current Ratio", "LTDebt/Eq", "Debt/Eq", "Profit Margin", "WACC", "ROIC", "Creación de Valor (WACC vs ROIC)"]
             ]
             
             st.dataframe(
